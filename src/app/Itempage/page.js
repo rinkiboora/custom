@@ -71,10 +71,9 @@ export default function MoviePanel() {
 
             {/* Channel Info + Buttons */}
             <div className="mt-4 p-4 rounded-lg">
-              <div className="flex ">
+              <div className="flex justify-between items-center gap-6 flex-wrap md:flex-nowrap">
                 <div className="flex flex-col lg:flex-row gap-4 items-start">
-                  {/* Channel Info */}
-                  <div className="flex items-center gap-3 w-full lg:w-auto flex-wrap">
+                  <div className="flex items-center gap-3 w-full lg:w-auto flex- wrap">
                     <Image src="/image/png/tvmovis.png" alt="BG" width={40} height={40} />
                     <div>
                       <h2 className="font-medium text-sm text-white">TV Movies</h2>
@@ -86,15 +85,17 @@ export default function MoviePanel() {
                     </button>
                   </div>
                 </div>{' '}
-                <div className=" grid grid-cols-2 md:grid-cols-3 lg:flex gap-2 w-full flex-end">
-                  {buttons.map((btn, i) => (
-                    <button
-                      key={i}
-                      className="flex items-center gap-1 px-2 pe-3 py-2 rounded-md text-white lg:bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
-                      {btn.icon}
-                      {btn.label && <span className="text-sm font-normal">{btn.label}</span>}
-                    </button>
-                  ))}
+                <div>
+                  <div className="flex gap-2 w-full">
+                    {buttons.map((btn, i) => (
+                      <button
+                        key={i}
+                        className="flex items-center gap-1 px-2 pe-3 py-2 rounded-md text-white lg:bg-white/10 backdrop-blur-md hover:bg-white/20 transition">
+                        {btn.icon}
+                        {btn.label && <span className="text-sm font-normal">{btn.label}</span>}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
               {/* Description */}
