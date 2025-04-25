@@ -115,3 +115,15 @@ button,
 input {
   font-family: var(--font-poppins);
 }
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #0f0f0f;
+}
+
+.scrollbar-thumb-gray-600 {
+  background-color: #888;
+}
+
+.scrollbar-track-gray-800 {
+  background-color: #0f0f0f;
+}

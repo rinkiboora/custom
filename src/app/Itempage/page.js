@@ -13,6 +13,8 @@ import {
 } from '../common/icon/icon';
 import { ThumbsUp, MoreHorizontal, ShareIcon } from 'lucide-react';
 import { movieData } from '../components/Halper/page';
+import Fq from '../common/Fq/page';
+import Footer from '../common/Footer/page';
 
 const { suggestions, commentsData } = movieData;
 
@@ -56,7 +58,7 @@ export default function MoviePanel() {
       : suggestions.filter((movie) => movie.text.toLowerCase().includes(activeTab.toLowerCase()));
 
   return (
-    <div className="min-h-screen pb-6 bg-[url('/image/png/Hero%20Section.png')] bg-cover bg-center bg-no-repeat">
+    <div className="relative">
       <Navbar />
       <div className="max-w-[1140px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row text-white">
@@ -73,7 +75,7 @@ export default function MoviePanel() {
             <div className="mt-4 p-4 rounded-lg">
               <div className="flex justify-between items-center gap-6 flex-wrap md:flex-nowrap">
                 <div className="flex flex-col lg:flex-row gap-4 items-start">
-                  <div className="flex items-center gap-3 w-full lg:w-auto flex- wrap">
+                  <div className="flex items-center gap-3 w-full lg:w-auto flex-wrap">
                     <Image src="/image/png/tvmovis.png" alt="BG" width={40} height={40} />
                     <div>
                       <h2 className="font-medium text-sm text-white">TV Movies</h2>
@@ -84,7 +86,7 @@ export default function MoviePanel() {
                       Subscribe
                     </button>
                   </div>
-                </div>{' '}
+                </div>
                 <div>
                   <div className="flex gap-2 w-full">
                     {buttons.map((btn, i) => (
@@ -115,7 +117,7 @@ export default function MoviePanel() {
                 </button>
               </div>
               <div
-                className="text-sm text-white/60 hover:text-white flex gap-2 pt-3"
+                className="text-sm text-white/60 hover:text-white flex gap-2 pt-3 cursor-pointer"
                 onClick={() => setShowComments(!showComments)}>
                 <CommitIcon /> View Comment
               </div>
@@ -143,7 +145,7 @@ export default function MoviePanel() {
                         className="w-[40px] h-[40px] object-cover rounded-full"
                       />
                       <div className="flex-1 space-y-1">
-                        <div className="flex justify-between text-sm  font-medium text-white/90">
+                        <div className="flex justify-between text-sm font-medium text-white/90">
                           <span>{data.name}</span>
                           <span className="text-xs text-white/60">{data.date}</span>
                         </div>
@@ -188,6 +190,43 @@ export default function MoviePanel() {
             ))}
           </div>
         </div>
+      </div>
+
+      <Fq />
+      <Footer />
+
+      {/* Decorative Images with black overlay */}
+      <div className="absolute top-[30%] right-0 z-0 hidden lg:flex">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/XMLID_36_.png" alt="Decor" width={154} height={86} />
+      </div>
+      <div className="absolute top-[-15%] left-0 z-0">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/lyar4.png" alt="Decor" width={600} height={400} />
+      </div>
+      <div className="absolute top-[6%] left-0 z-0">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/XMLID_2_.png" alt="Decor" width={100} height={100} />
+      </div>
+      <div className="absolute top-[6%] left-0 -z-50">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/bgimg.png" alt="Decor" width={220} height={220} />
+      </div>
+      <div className="absolute top-[40%] left-0 -z-50">
+        <div className="absolute inset-0 z-[-1]" />
+        <Image src="/image/png/bgimg2.png" alt="Decor" width={220} height={220} />
+      </div>
+      <div className="absolute top-[50%] left-0 -z-50">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/bgimg.png" alt="Decor" width={220} height={220} />
+      </div>
+      <div className="absolute top-[30%] right-0 -z-50">
+        <div className="absolute inset-0  z-[-1]" />
+        <Image src="/image/png/bgimg3.png" alt="Decor" width={220} height={220} />
+      </div>
+      <div className="absolute top-[40%] right-0 -z-50">
+        <div className="absolute inset-0 bg-black/100 z-[-50]" />
+        <Image src="/image/png/bgimg3.png" alt="Decor" width={220} height={220} />
       </div>
     </div>
   );
